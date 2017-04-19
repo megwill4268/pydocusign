@@ -1,4 +1,18 @@
 {# Jinja2 #}<?xml version="1.0" encoding="utf-8"?>
+<!-- Sample partial Header of the request posted by DocuSign as event notification. -->
+<Envelope>
+  <Header>
+    <Security>
+      <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+          <Reference URI={{ ReferenceID }}>
+          </Reference>
+        </SignedInfo>
+        <SignatureValue>{{ SignatureValue }}</SignatureValue>
+      </Signature>
+    </Security>
+  </Header>
+	
 <!-- Sample body of the request posted by DocuSign as event notification. -->
 <DocuSignEnvelopeInformation xmlns:xsd="http://www.w3.org/2001/XMLSchema"
 	                     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -103,6 +117,7 @@
       </DocumentStatus>
     </DocumentStatuses>
   </EnvelopeStatus>
+</Envelope>
   <TimeZone>Pacific Standard Time</TimeZone>
   <TimeZoneOffset>-7</TimeZoneOffset>
 </DocuSignEnvelopeInformation>
